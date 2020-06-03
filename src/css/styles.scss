@@ -1,0 +1,653 @@
+@import "SourceSansPro.css";
+
+/* Variables */
+$background: #252827;
+$color-primary: #004ffc;
+$color-light: white;
+$color-dim: #6c6d6d;
+$spacing: 30px;
+$radius: 4px;
+$date: 120px;
+$dotborder: 4px;
+$dot: 11px;
+$line: 4px;
+$font-title: 'Saira', sans-serif;
+$font-text: 'Chivo', sans-serif;
+#timeline-content {
+  margin-top: $spacing;
+  text-align: center;
+  background: #EFF8FF;
+}
+/* Timeline */
+.timeline {
+  border-left: 3px solid #0688FA;
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+  color: #004ffc;
+  font-family: $font-text;
+  margin: $spacing auto;
+  letter-spacing: 0.5px;
+  position: relative;
+  line-height: 1.4em;
+  font-size: 1.03em;
+  padding: 5.5rem $spacing 6.5rem $spacing;
+  list-style: none;
+  text-align: left;
+  font-weight: 100;
+  margin-left: 25%;
+  h3{
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 34px;
+    margin-left: 3rem;
+    color: #000;
+  }
+  .event {
+    border-bottom: 1px dashed fade($color-light, 10%);
+    padding: ($spacing * 0.5) 0px;
+    margin-bottom: ($spacing * 2);
+    position: relative;
+    &:last-of-type {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border: none;
+    }
+
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      top: 0;
+    }
+
+    &:before {
+      left: ((($date * 0.6) + $spacing + $line + $dot + ($dotborder * 2)) * 1.5) * -1.3;
+      color: #0688FA;
+      content: attr(data-date);
+      text-align: right;
+      font-weight: 600;
+      font-size: 23px;
+      min-width: $date;
+      font-family: $font-title;
+      margin-top: 1.5rem;
+    }
+    &:after {
+      background-color: #fff;
+      background-image: url('../img/letter.png');
+      background-repeat: no-repeat;
+      background-size: 65%;
+      background-position: center center;
+      left: ($spacing + $line + ($dot * 0.35)) * -2;
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      content: "";
+      top: -5px;
+    }
+  }
+}
+body{
+  font-size: 17px!important;
+  font-family: Source Sans Pro, sans-serif;
+  overflow-x: hidden;
+}
+.image{
+  width: 100%;
+}
+/*header styles*/
+#header{
+  display: flex;
+  width: 100%;
+  padding: 0rem 8rem;
+  color: #2b2b2b;
+  background-color: #fff;
+  justify-content: space-between;
+  z-index: 999;
+  font-weight: 400;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+  position: sticky;
+  top: 0;
+  height: 90px;
+  align-items: center;
+  .navigation a{
+    font-family: 'Source Sans Pro Bold', sans-serif;
+    margin: 0rem 1.4rem;
+    font-size: 17px;
+  }
+}
+.header-logo{
+  height: 45px;
+  width: auto;
+}
+/*navbar-custom*/
+#navbar-custom{
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 50px;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.9);
+  width: 100%;
+  text-align: center;
+  z-index: 999;
+  padding-top: 1rem;
+  li{
+    list-style-type: none;
+    margin: 1rem 1.2rem 0rem 0rem;
+    a{
+      color: #fff;
+      padding: 1rem 0.5rem 1rem 0.5rem;
+    }
+  }
+}
+.header_link{
+  color: #2b2b2b;
+  transition: 0.1s;
+}
+.header_link:hover{
+  text-decoration: none;
+  color: #2598ea;
+}
+@media screen and (max-width: 1049px) {
+  #header {
+    .navigation {
+      a {
+        font-size: 15px;
+        margin: 0rem 0.5rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 895px) {
+  #header{
+    height: 60px;
+    margin-top: 0;
+  }
+}
+/*navbar end*/
+/*header styles end*/
+
+/*footer styles*/
+footer{
+  padding: 6% 0%;
+  color: #333333;
+  .contacts_info{
+    .footer-titles{
+      margin-top: 1rem;
+    }
+    .footer-titles:first-child{
+      margin-top: 0rem;
+    }
+    p{
+      margin-bottom: 0px;
+    }
+  }
+}
+.footer-titles{
+  font-family: 'Source Sans Pro Bold', sans-serif;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+.footer-logo{
+  height: 45px;
+}
+.footer-links{
+  font-size: 16px;
+}
+.footer-icon{
+  color: #0fb8cd !important;
+  width: 15px;
+  margin-top: 5px;
+}
+.near-footer{
+  background-color: #F4F4F4;
+  background-image: url('../img/footer-waves.png');
+  background-size: 100%;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  padding-bottom: 12%;
+  padding-top: 4%;
+  .near-footer_links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    line-height: 24px;
+    span{
+      font-family: 'Source Sans Pro Bold', sans-serif;
+      margin-right: 1.5rem;
+    }
+    .socialNetwork{
+      a{
+        height: 38px;
+        width: 38px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin: 0rem 0.7rem;
+        path{
+          height: 38px !important;
+          font-size: 38px;
+          border-radius: 50%;
+          padding: 13px;
+          margin: 1rem;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+/*footer styles end*/
+.blockName{
+  text-align: center;
+  margin-top: 2rem;
+  h2{
+    font-family: 'Source Sans Pro Bold', sans-serif;
+    font-size: 58px;
+    line-height: 62px;
+    margin-bottom: 3rem;
+  }
+}
+.culture{
+  padding: 3% 0%;
+  color: #000000;
+  button{
+    font-size: 18px;
+    padding: 17px 43px 19px 43px;
+  }
+}
+.culture-item{
+  h4{
+    font-family: 'Source Sans Pro Bold', sans-serif;
+    font-size: 21px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+  }
+  img{
+  margin-bottom: 1.5rem;
+  }
+}
+.counter_desc{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+  color: #537089;
+}
+.counter_after{
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #537089;
+  margin-bottom: 2rem;
+}
+/*Service styles*/
+.offices{
+  background-image: url("../img/off_vector.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #fff;
+  padding: 2% 3% 6% 3%;
+}
+.offices-item{
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  padding: 35px 0px;
+  margin: 0 4%;
+  .image{
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1.3rem;
+  }
+  h2{
+    font-family: 'Source Sans Pro Bold', sans-serif;
+    font-size: 32px;
+    line-height: 34px;
+    letter-spacing: 1px;
+  }
+  p{
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+.offices_inform{
+  padding: 15px;
+  display: flex;
+  background-color: #fff;
+  color: #666666;
+  padding-bottom: 70px;
+}
+/*service end*/
+.every-form-main{
+  width: 100%;
+}
+.every-form{
+  border-radius: 300px;
+  color: #999;
+  border: none;
+  padding: 13px 27px;
+  margin:0.5rem;
+  width: 50%;
+}
+.every-form-btn{
+  font-family: 'Source Sans Pro Bold', sans-serif;
+  border-radius: 7px;
+  background-color: #2197f1;
+  color: #fff;
+  padding: 6px 29px 8px 31px;
+  margin:0.2rem;
+  font-size: 18px;
+  border: 2px solid #fff;
+}
+.every-form-btn.white{
+  background-color: #fff;
+  border: 2px solid #2197f1;
+  color: #2197f1;
+}
+.about-new-block{
+  padding-top: 6%;
+  padding-bottom: 3.5%;
+  h1{
+    font-family: 'Source Sans Pro Bold', sans-serif;
+    font-size: 58px;
+    line-height: 62px;
+    color: #000;
+    margin-right: 3rem;
+  }
+  p{
+    margin-bottom: 2rem;
+  }
+}
+.bold{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/*contact info*/
+.contact_info{
+  padding: 9% 0%;
+  margin: 1rem 4.5%;
+  color: #fff;
+  border-radius: 5px;
+  background: #329DFA;
+  font-weight: 600;
+  margin-top: 8rem;
+  border-radius: 10px;
+  button{
+    font-size: 17px;
+    padding: 19px 86px 19px 86px;
+    letter-spacing: 1px;
+  }
+  h3{
+    font-family: 'Source Sans Pro Bold', sans-serif;
+    font-size: 48px;
+    margin-bottom: 2rem;
+  }
+}
+/*contact info*/
+/*banner*/
+.banner-carousel{
+  margin-top: 3%;
+  img{
+    border-radius: 5px;
+  }
+}
+/*banner end*/
+/*investors*/
+.investors{
+  text-align: center;
+  background-image: url("../img/invest_vector.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 103%;
+  padding-top: 3rem;
+  img, svg{
+    max-width: 70%;
+    max-height: 80%;
+  }
+}
+.invertors_item{
+  margin: 1rem;
+  padding: 4rem 1rem;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  height: 85%;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+@media screen and (max-width: 1100px) {
+  #header{
+    padding: 0 1rem;
+  }
+  .mobOff{
+    display: none;
+  }
+  .contact_info{
+    border-radius: 5px;
+    button{
+      padding: 10px 46px 10px 46px;
+    }
+    h3{
+      font-size: 28px;
+    }
+  }
+  .blockName{
+    h2{
+      font-size: 31px;
+      margin-bottom: 0rem;
+    }
+  }
+  .about-new-block {
+    h1 {
+      line-height: 100%;
+      font-size: 32px;
+    }
+  }
+  .culture-item{
+    h4{
+      font-size: 16px;
+    }
+    img{
+      height: 56px;
+      width: auto;
+    }
+  }
+  .investors {
+    padding-top: 0rem;
+    background-image: url("../img/invest_vector.png");
+    .blockName h2 {
+      margin-bottom: 2rem;
+    }
+    .invertors_item{
+      padding: 1rem 2rem;
+      img{
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+  .timeline{
+    margin-left: 32%;
+    h3{
+      margin-left: 1.5rem;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .event::before{
+      font-size: 17px;
+      left: ((($date * 0.6) + $spacing + $line + $dot + ($dotborder * 2)) * 1.5) * -1.1;;
+    }
+    .event::after {
+      left: ($spacing + $line + ($dot * 0.35)) * -1.7;
+      height: 65px;
+      width: 65px;
+      top: 10px;
+    }
+  }
+  .counter_after{
+    font-size: 18px;
+    padding: 0 10%;
+  }
+  .offices-item{
+    padding: 20px 0px;
+    .image{
+      height: 65px;
+    }
+    h2{
+      font-size: 28px;
+      letter-spacing: 0px;
+    }
+  }
+  .banner-carousel{
+    margin: 3% 7%;
+    position: relative;
+    overflow: hidden;
+    img{
+      width: 250%;
+      margin-left: -60%;
+    }
+  }
+}
+@media screen and (min-width: 767px) {
+  #header, .banner-carousel, .about-new-block, .culture, .offices, .investors, footer, .near-footer, .timeline_events{
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+//Mobile
+@media screen and (max-width: 767px) {
+  .footer-titles {
+    font-size: 16px;
+  }
+  .near-footer {
+    padding-top: 3rem;
+    background-size: 233%;
+    background-position: 63% bottom;
+    padding-bottom: 28%;
+
+    .near-footer_links {
+      flex-direction: column;
+
+      div:first-child {
+        order: 2;
+      }
+
+      span {
+        display: block;
+        width: 100%;
+        text-align: center;
+        line-height: 40px;
+      }
+
+      .socialNetwork {
+        margin-bottom: 1.5rem;
+        order: 1;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+  .every-form-btn {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .contact_info {
+    background: transparent;
+    background-image: url("../img/mob_vector.png");
+    background-size: 100%;
+    margin: 1rem 0%;
+    border-radius: 0;
+    padding-bottom: 15%;
+
+    h3 {
+      margin-top: 25%;
+    }
+  }
+  .timeline{
+    margin-left: 32%;
+    h3{
+      margin-left: 1.5rem;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .event::before{
+      font-size: 17px;
+      left: ((($date * 0.6) + $spacing + $line + $dot + ($dotborder * 2)) * 1.5) * -1.05;;
+    }
+  }
+  .footer-logo {
+    width: 50%;
+    height: auto;
+    margin-bottom: $spacing;
+  }
+  .offices{
+    background-image: url("../img/mobTop_vector.jpg");
+  }
+  .offices-item {
+    margin: 1rem 0rem;
+  }
+  .about-new-block {
+    h1 {
+      margin-right: 0rem;
+    }
+  }
+  .counter_after{
+    text-align: left;
+    font-size: 16px;
+    padding: 0;
+  }
+  .investors{
+    background-image: url("../img/mobBottom_vector.jpg");
+  }
+  .banner-carousel{
+    margin: 3% 7%;
+    position: relative;
+    overflow: hidden;
+    img{
+      width: 385%;
+      margin-left: -140%;
+    }
+  }
+  .investors {
+    .invertors_item {
+      img {
+        max-width: 80%;
+        max-height: 80%;
+        height: 250px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .footer-titles, .footer-links{
+    font-size: 14px;
+  }
+  .header-logo{
+    width: 50%;
+    height: auto;
+  }
+  .near-footer {
+    p {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  .investors {
+    .invertors_item {
+      img {
+        max-width: 100%;
+        max-height: 80%;
+        height: 170px;
+      }
+    }
+  }
+}
