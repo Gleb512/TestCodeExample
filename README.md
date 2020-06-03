@@ -1,5 +1,9 @@
 # TestCodeExample
 To build the project run next in the command line
+
+
+
+
 npm install
 npm run build
 
