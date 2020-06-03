@@ -5,6 +5,9 @@ To build the project run next in the command line
 
 
 npm install
+
+
+
 npm run build
 
 After it you need to open dist/index.html in browzer.
